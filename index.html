@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASA BISONTE POPO PARK | Private Mountain Retreat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-blue: #0a1a2d;
+            --medium-blue: #1a2d4a;
+            --light-blue: #2d4a6a;
+            --dark-brown: #5d4037;
+            --medium-brown: #8d6e63;
+            --light-brown: #d7ccc8;
+            --accent: #ff9800;
+            --text-light: #f5f5f5;
+            --text-gray: #e0e0e0;
+            --selected-green: #2e7d32;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark-blue);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(10, 26, 45, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            color: var(--accent);
+            font-size: 28px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            color: var(--text-light);
+            letter-spacing: 1px;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--light-brown);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section with custom image */
+        .hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(rgba(10, 26, 45, 0.85), rgba(93, 64, 55, 0.8)), url('casabisontehero.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: var(--text-gray);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--dark-blue);
+        }
+        
+        .btn-primary:hover {
+            background-color: #ffb74d;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--accent);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 152, 0, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--light-brown);
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Gallery */
+        .gallery {
+            background-color: var(--medium-blue);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 26, 45, 0.85);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        /* About */
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            background-color: var(--medium-blue);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Experiences - UPDATED LAYOUT */
+        .experiences {
+            background-color: var(--medium-blue);
+        }
+        
+        .experience-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--dark-brown);
+            flex-wrap: wrap;
+        }
+        
+        .experience-tab {
+            padding: 15px 30px;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .experience-tab:hover {
+            color: var(--accent);
+        }
+        
+        .experience-tab.active {
+            color: var(--accent);
+        }
+        
+        .experience-tab.active:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .experience-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .experience-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .package-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .package-card {
+            background-color: var(--dark-blue);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border-top: 5px solid var(--accent);
+            transition: transform 0.3s;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .package-header {
+            padding: 25px;
+            text-align: center;
+            background-color: rgba(93, 64, 55, 0.3);
+        }
+        
+        .package-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--light-brown);
+        }
+        
+        .package-price {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 10px 0;
+        }
+        
+        .package-price span {
+            font-size: 1rem;
+            color: var(--text-gray);
+        }
+        
+        .package-body {
+            padding: 25px;
+        }
+        
+        .package-features {
+            list-style: none;
+        }
+        
+        .package-features li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .package-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .package-features li.not-included {
+            color: var(--text-gray);
+        }
+        
+        .package-features li.not-included:before {
+            content: '✗';
+            color: #f44336;
+        }
+        
+        .package-highlight {
+            background-color: rgba(255, 152, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        /* Pricing */
+        .pricing-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .pricing-card {
+            background-color: var(--medium-blue);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        
+        .pricing-header {
+            background-color: var(--dark-brown);
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .pricing-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .pricing-body {
+            padding: 25px;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 15px 0;
+        }
+        
+        /* Trip Planner */
+        .trip-planner {
+            background-color: var(--medium-blue);
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 50px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--dark-brown);
+        }
+        
+        .trip-planner h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            color: var(--light-brown);
+        }
+        
+        .planner-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: var(--dark-blue);
+            border: 1px solid var(--light-blue);
+            border-radius: 5px;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .checkbox-group input {
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        /* EXPERIENCE SELECTOR - IMPROVED */
+        .experience-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .experience-option {
+            background-color: var(--dark-blue);
+            border: 2px solid var(--light-blue);
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .experience-option:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .experience-option.selected {
+            background-color: rgba(46, 125, 50, 0.2);
+            border-color: var(--selected-green);
+            box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.3);
+        }
+        
+        .experience-option.selected:after {
+            content: "✓";
+            position: absolute;
+            top: 5px;
+            right: 8px;
+            color: var(--selected-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .experience-icon {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+        
+        .experience-option.selected .experience-icon {
+            color: var(--selected-green);
+        }
+        
+        .experience-option h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        
+        .experience-option p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+        
+        .experience-category {
+            margin-bottom: 25px;
+        }
+        
+        .experience-category h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--light-brown);
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--dark-brown);
+        }
+        
+        .trip-results {
+            background-color: var(--dark-blue);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border-left: 5px solid var(--accent);
+        }
+        
+        .trip-results h4 {
+            margin-bottom: 15px;
+            color: var(--light-brown);
+        }
+        
+        .results-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .result-item {
+            background-color: rgba(255, 152, 0, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .result-total {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid var(--light-blue);
+            margin-top: 20px;
+        }
+        
+        /* Trust */
+        .trust-icons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .trust-item {
+            text-align: center;
+            padding: 25px 15px;
+            background-color: var(--medium-blue);
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .trust-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .trust-item i {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        /* FAQ */
+        .faq {
+            background-color: var(--medium-blue);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            background-color: var(--dark-blue);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(93, 64, 55, 0.3);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        /* CTA */
+        .cta {
+            text-align: center;
+            background: linear-gradient(to right, var(--dark-blue), var(--dark-brown));
+            padding: 80px 0;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--text-gray);
+        }
+        
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: var(--medium-blue);
+            padding: 20px 30px;
+            border-radius: 50px;
+            transition: transform 0.3s;
+        }
+        
+        .contact-method:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-method i {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #050f1a;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            margin-bottom: 30px;
+        }
+        
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid var(--light-blue);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .experience-selector {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            }
+            
+            .package-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: var(--dark-blue);
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 150px 0 70px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .trip-planner {
+                padding: 25px;
+            }
+            
+            .experience-selector {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .experience-tabs {
+                flex-direction: column;
+            }
+            
+            .experience-tab {
+                text-align: center;
+                padding: 12px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .contact-method {
+                padding: 15px 20px;
+            }
+            
+            .experience-selector {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-mountain"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>CASA BISONTE POPO PARK</h1>
+                    <p>Private Mountain Retreat near Popocatépetl</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experiences">Experiences</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Private Mountain Retreat near Popocatépetl with Fire Pit, Private Guide & Airport Pickup</h1>
+            <p>A comfortable 3-bedroom home for up to 12 guests, offering optional guided experiences and transportation for a stress-free stay in Atlautla, Mexico.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary" id="calendarBtn"><i class="far fa-calendar-alt"></i> Check Availability on Google Calendar</a>
+                <a href="#experiences" class="btn btn-secondary"><i class="fas fa-plane"></i> Ask About Full Experience Package</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section with custom images -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Photo Gallery</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="casabisonte1.jpg" alt="Casa Bisonte Exterior">
+                    <div class="gallery-caption">
+                        <p>Casa Bisonte Exterior - Traditional Mexican architecture with nature views</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="casabisonte2.jpg" alt="Grill Area">
+                    <div class="gallery-caption">
+                        <p>Spacious yard with grilling equipment</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="casabisonte3.jpg" alt="Fire Pit">
+                    <div class="gallery-caption">
+                        <p>Private yard & fire pit for relaxing evenings under the stars</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="casabisonte4.jpg" alt="Volcano">
+                    <div class="gallery-caption">
+                        <p>10 miles away from Popocatépetl Volcano</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="casabisonte5.jpg" alt="Kitchen">
+                    <div class="gallery-caption">
+                        <p>Beautiful Kitchen</p>
+                    </div>
+                </div>
+                <div class="gallery-item">House Rental Only
+
+                    <img src="casabisontehero.jpg" alt="Meals Available">
+                    <div class="gallery-caption">
+                        <p>Don´t cook or clean</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Your Private Home Base Near the Popo</h2>
+            </div>
+            <p style="text-align: center; max-width: 900px; margin: 0 auto 40px; font-size: 1.2rem;">
+                Casa Popo Park is a private 3-bedroom, 2-bath home located in Atlautla near PopoPark. Designed for families and groups of up to 12 guests, the home offers space, privacy, and comfort — with optional services that make travel easy for international visitors.
+            </p>
+            
+            <div class="about-features">
+                <div class="feature">
+                    <i class="fas fa-user-friends"></i>
+                    <h3>Sleeps up to 12</h3>
+                    <p>Perfect for large families or groups of friends</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-mountain"></i>
+                    <h3>Quiet, Private Location</h3>
+                    <p>Enjoy tranquility and privacy in a secure area</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-fire"></i>
+                    <h3>Large Yard & Fire Pit</h3>
+                    <p>Perfect for evenings under the stars</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Local Property Manager</h3>
+                    <p>On-site support for any needs during your stay</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headset"></i>
+                    <h3>U.S.-Based Owner Support</h3>
+                    <p>English-speaking assistance before and during your trip</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiences Section - UPDATED with tabs -->
+    <section class="experiences" id="experiences">
+        <div class="container">
+            <div class="section-title">
+                <h2>Choose Your Experience Package</h2>
+            </div>
+            
+            <div class="experience-tabs">
+                <button class="experience-tab active" data-tab="house-only">House Only</button>
+                <button class="experience-tab" data-tab="complete-package">Complete Package</button>
+                <button class="experience-tab" data-tab="transportation">Transportation Options</button>
+            </div>
+            
+            <!-- House Only Tab -->
+            <div class="experience-content active" id="house-only">
+                <div class="package-comparison">
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3>House Rental Only</h3>
+                            <p>Perfect for independent travelers</p>
+                            <div class="package-price">$150-$200<span>/night*</span></div>
+                        </div>
+                        <div class="package-body">
+                            <ul class="package-features">
+                                <li>3-bedroom, 2-bath private home</li>
+                                <li>Sleeps up to 12 guests</li>
+                                <li>Full kitchen and living areas</li>
+                                <li>Private yard with fire pit</li>
+                                <li>Mountain views of Popocatépetl</li>
+                                <li>Local property manager support</li>
+                                <li class="not-included">Guided experiences</li>
+                                <li class="not-included">Transportation services</li>
+                                <li class="not-included">Meal planning</li>
+                            </ul>
+                            <div class="package-highlight">
+                                <p><strong>Best for:</strong> Visitors who prefer to explore independently and have their own transportation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Complete Package Tab -->
+            <div class="experience-content" id="complete-package">
+                <div class="package-comparison">
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3>Complete Casa Popo Experience</h3>
+                            <p>All-inclusive guided vacation</p>
+                            <div class="package-price">From $450<span>/day*</span></div>
+                        </div>
+                        <div class="package-body">
+                            <ul class="package-features">
+                                <li>Everything in House Rental</li>
+                                <li>Private bilingual guide (English/Spanish)</li>
+                                <li>Customized tours & sightseeing</li>
+                                <li>Local cultural access</li>
+                                <li>Personalized itinerary planning</li>
+                                <li>Choose from 10+ destinations</li>
+                                <li>Includes Popocatépetl volcano tour</li>
+                                <li>Transportation for all activities</li>
+                                <li>Optional meal planning available</li>
+                            </ul>
+                            <div class="package-highlight">
+                                <p><strong>Available destinations:</strong> Parque Panohaya, Valquirico (Italian town), Pyramids Teotihuacan, Chapultepec Park, Six Flags Mexico, Mundo E Mall, LDS sites (Puebla Temple, Mexico City Temple, Visitor Center Mexico), and Popocatépetl Volcano.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Transportation Tab -->
+            <div class="experience-content" id="transportation">
+                <div class="package-comparison">
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3>Transportation Options</h3>
+                            <p>Stress-free travel arrangements</p>
+                        </div>
+                        <div class="package-body">
+                            <ul class="package-features">
+                                <li><strong>Airport Meet & Follow:</strong> We meet you at the airport and guide you to the house (with your rental car)</li>
+                                <li><strong>Private Airport Pickup:</strong> No rental car needed - we drive you directly to Casa Bisonte</li>
+                                <li><strong>Local Transportation for Tours:</strong> Door-to-door service to all attractions</li>
+                                <li><strong>Complete Itinerary Support:</strong> We handle all transportation logistics for your entire stay</li>
+                            </ul>
+                            <div class="package-highlight">
+                                <p>We make getting around easy and stress-free, whether you prefer to drive or be driven. All transportation services can be added to either the House Only or Complete Package options.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pricing & Trip Planning</h2>
+            </div>
+            
+            <div class="pricing-container">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>House Only</h3>
+                        <p>Perfect for independent travelers</p>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price">$150<span style="font-size: 1rem;">/night*</span></div>
+                        <p><strong>Weekdays:</strong> $150 USD/night</p>
+                        <p><strong>Weekends:</strong> $185 USD/night</p>
+                        <p><strong>Holidays:</strong> $225 USD/night</p>
+                        <p style="margin-top: 15px; font-style: italic; font-size: 0.9rem;">*Base rate for weekdays</p>
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>All-Inclusive Meals</h3>
+                        <p>Optional add-on service</p>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price">$30<span style="font-size: 1rem;">/person/day</span></div>
+                        <p>Enjoy authentic Mexican cuisine prepared for you</p>
+                        <ul style="margin-top: 15px;">
+                            <li>Breakfast, lunch, and dinner</li>
+                            <li>Traditional local dishes</li>
+                            <li>Dietary restrictions accommodated</li>
+                            <li>No cooking or cleanup for you</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Guided Experiences</h3>
+                        <p>Explore with a private guide</p>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price">$300<span style="font-size: 1rem;">/group/day</span></div>
+                        <p>Choose from our curated destinations (click to select):</p>
+                        <p style="margin-top: 10px; font-size: 0.9rem; color: var(--accent);"><i class="fas fa-mouse-pointer"></i> Click on experiences below to select/deselect</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Trip Planner -->
+            <div class="trip-planner">
+                <h3>Plan Your Trip & Estimate Cost</h3>
+                
+                <div class="planner-controls">
+                    <div class="form-group">
+                        <label for="weekdays">Weekday Nights:</label>
+                        <input type="number" id="weekdays" min="0" value="0">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="weekends">Weekend Nights:</label>
+                        <input type="number" id="weekends" min="0" value="0">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="holidays">Holiday Nights:</label>
+                        <input type="number" id="holidays" min="0" value="0">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Meal Plan ($30/person/day):</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="meals">
+                        <label for="meals">Include all meals during our stay</label>
+                    </div>
+                    <input type="number" id="guests" min="1" max="12" value="2" placeholder="Number of guests" style="margin-top: 10px;">
+                </div>
+                
+                <!-- IMPROVED EXPERIENCE SELECTOR with Popocatépetl -->
+                <div class="form-group">
+                    <label>Guided Experiences ($300/group/day):</label>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">Select the experiences you're interested in. Each selected experience adds $300 to your total.</p>
+                    
+                    <div class="experience-category">
+                        <h4><i class="fas fa-mountain"></i> Nature & Adventure</h4>
+                        <div class="experience-selector" id="experienceSelector">
+                            <div class="experience-option" data-experience="popocatepetl" data-price="300">
+                                <div class="experience-icon">
+                                    <i class="fas fa-mountain"></i>
+                                </div>
+                                <h4>Popocatépetl Volcano</h4>
+                                <p>Visit the majestic "Popo" volcano</p>
+                            </div>
+                            
+                            <div class="experience-option" data-experience="parque-panohaya" data-price="300">
+                                <div class="experience-icon">
+                                    <i class="fas fa-tree"></i>
+                                </div>
+                                <h4>Parque Panohaya</h4>
+                                <p>Nature park with scenic views</p>
+                            </div>
+                            
+                            <div class="experience-option" data-experience="teotihuacan" data-price="300">
+                                <div class="experience-icon">
+                                    <i class="fas fa-monument"></i>
+                                </div>
+                                <h4>Pyramids Teotihuacan</h4>
+                                <p>Ancient Mesoamerican pyramids</p>
+                            </div>
+                            
+                            <div class="experience-option" data-experience="chapultepec" data-price="300">
+                                <div class="experience-icon">
+                                    <i class="fas fa-park"></i>
+                                </div>
+                                <h4>Chapultepec Park</h4>
+                                <p>One of the largest city parks</p>
+                            </div>
+                            
+                            <div class="experience-option" data-experience="six-flags" data-price="300">
+                                <div class="experience-icon">
+                                    <i class="fas fa-water"></i>
+                                </div>
+                                <h4>Six Flags Mexico</h4>
+                                <p>Aquatic & theme park</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-category">
+                        <h4><i class="fas fa-archway"></i> Cultural & Shopping</h4>
+                        <div class="experience-selector">
+                            <div class="experience-option" data-experience="valquirico" data-price="300">
+                                <div class="experience-icon">
+                                    <i class="fas fa-flag"></i>
+                                </div>
+                                <h4>Valquirico</h4>
+                                <p>Italian-style village</p>
+                            </div>
+                            
+                            <div class="experience-option" data-experience="mundo-e" data-price="300">
+                                <div class="experience-icon">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </div>
+                                <h4>Mundo E Mall</h4>
+                                <p>Latin America's most beautiful mall</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-category">
+                        <h4><i class="fas fa-church"></i> LDS Sites</h4>
+                        <div class="experience-selector">
+                            <div class="experience-option" data-experience="puebla-temple" data-price="300">
+                                <div class="experience-icon">
+                                    <i class="fas fa-place-of-worship"></i>
+                                </div>
+                                <h4>Puebla Temple</h4>
+                                <p>LDS Temple in Puebla</p>
+                            </div>
+                            
+                            <div class="experience-option" data-experience="mexico-temple" data-price="300">
+                                <div class="experience-icon">
+                                    <i class="fas fa-church"></i>
+                                </div>
+                                <h4>Mexico City Temple</h4>
+                                <p>LDS Temple in Mexico City</p>
+                            </div>
+                            
+                            <div class="experience-option" data-experience="visitor-center" data-price="300">
+                                <div class="experience-icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <h4>Visitor Center Mexico</h4>
+                                <p>LDS Visitor Center</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 20px; padding: 15px; background-color: rgba(255, 152, 0, 0.1); border-radius: 8px; border-left: 4px solid var(--accent);">
+                        <p style="margin-bottom: 10px;"><strong>Selected Experiences:</strong> <span id="selectedCount">0</span> of 10</p>
+                        <p id="selectedExperiencesList" style="font-size: 0.9rem; color: var(--text-gray);">None selected yet</p>
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary" id="calculateBtn" style="width: 100%; margin-top: 20px;">
+                    <i class="fas fa-calculator"></i> Calculate Total Cost
+                </button>
+                
+                <div class="trip-results" id="tripResults" style="display: none;">
+                    <h4><i class="fas fa-receipt"></i> Your Trip Estimate</h4>
+                    <div class="results-details">
+                        <div class="result-item">
+                            <strong>Accommodation:</strong> <span id="accommodationCost">$0</span>
+                        </div>
+                        <div class="result-item">
+                            <strong>Meals:</strong> <span id="mealsCost">$0</span>
+                        </div>
+                        <div class="result-item">
+                            <strong>Experiences:</strong> <span id="experiencesCost">$0</span>
+                        </div>
+                        <div class="result-item">
+                            <strong>Total Days:</strong> <span id="totalDays">0</span>
+                        </div>
+                    </div>
+                    <div class="result-total">
+                        Estimated Total: <span id="totalCost">$0</span>
+                    </div>
+                    <p style="text-align: center; margin-top: 15px;">
+                        <i class="fas fa-phone-alt" style="margin-right: 8px;"></i>Ready to book? Contact us for exact availability and booking!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Guests Trust Us</h2>
+            </div>
+            
+            <div class="trust-icons">
+                <div class="trust-item">
+                    <i class="fas fa-flag-usa"></i>
+                    <h3>U.S.-Based Owner</h3>
+                    <p>Easy communication and understanding of your needs</p>
+                </div>
+                
+                <div class="trust-item">
+                    <i class="fas fa-user-check"></i>
+                    <h3>Local On-Site Manager</h3>
+                    <p>Immediate assistance during your stay</p>
+                </div>
+                
+                <div class="trust-item">
+                    <i class="fas fa-comments"></i>
+                    <h3>English-Speaking Support</h3>
+                    <p>No language barriers for international guests</p>
+                </div>
+                
+                <div class="trust-item">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>Clear House Rules & Contract</h3>
+                    <p>Transparent terms and expectations</p>
+                </div>
+                
+                <div class="trust-item">
+                    <i class="fas fa-star"></i>
+                    <h3>Private, Curated Experience</h3>
+                    <p>Tailored to your interests and preferences</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is this safe for first-time Mexico visitors?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. We specialize in supporting international guests with local guidance and optional transportation. Our area is safe and we provide all necessary support to ensure a comfortable, worry-free stay.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do I need a rental car?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No. Airport pickup and local transportation are available as optional services. We can arrange everything from airport transfers to daily transportation for your chosen experiences.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I book?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply message us on WhatsApp at 307-431-8328 or email bighorggrp@gmail.com to check availability. We'll discuss your needs, confirm dates, and send you a booking contract.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's included in the guided experiences?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our private guide will pick you up, provide transportation, offer cultural and historical context at each location, handle tickets and reservations, and ensure you have a memorable, stress-free experience. The $300/day is for the entire group (up to 12 people), not per person.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is your cancellation policy?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a flexible cancellation policy: full refund if cancelled 30+ days before arrival, 50% refund if cancelled 14-29 days before, and no refund if cancelled less than 14 days before. We recommend travel insurance for unexpected circumstances.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Ready to plan your stay near the Popo?</h2>
+            <p>Contact us directly to check availability and create your perfect itinerary. We'll respond within 24 hours.</p>
+            
+            <div class="contact-methods">
+                <a href="https://wa.me/13074318328" class="contact-method" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h3>TEXT US</h3>
+                        <p>307-431-8328</p>
+                    </div>
+                </a>
+                
+                <a href="mailto:bighorggrp@gmail.com" class="contact-method">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>EMAIL US</h3>
+                        <p>bighorggrp@gmail.com</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>CASA BISONTE POPO PARK</h1>
+                        <p>Atlautla, Mexico</p>
+                    </div>
+                </div>
+                
+                <p style="max-width: 600px; margin: 30px auto; color: var(--text-gray);">
+                    Your private mountain retreat near Popocatépetl offering comfort, adventure, and authentic Mexican hospitality.
+                </p>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Casa Bisonte Popo Park. All rights reserved. | Designed for conversion and trust-building</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+        
+        // FAQ toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Calendar button alert
+        document.getElementById('calendarBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert("Google Calendar link will be added here. For now, please contact us directly to check availability.");
+        });
+        
+        // Experience Tabs
+        document.querySelectorAll('.experience-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('.experience-tab').forEach(t => {
+                    t.classList.remove('active');
+                });
+                
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                // Get the tab content to show
+                const tabId = this.getAttribute('data-tab');
+                
+                // Hide all tab contents
+                document.querySelectorAll('.experience-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Show the selected tab content
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Experience selector - click to select/deselect
+        let selectedExperiences = [];
+        
+        document.querySelectorAll('.experience-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const experienceId = this.getAttribute('data-experience');
+                const experienceName = this.querySelector('h4').textContent;
+                
+                // Check if already selected
+                const index = selectedExperiences.indexOf(experienceId);
+                
+                if (index > -1) {
+                    // Remove from selection
+                    selectedExperiences.splice(index, 1);
+                    this.classList.remove('selected');
+                } else {
+                    // Add to selection
+                    selectedExperiences.push(experienceId);
+                    this.classList.add('selected');
+                }
+                
+                updateSelectedExperiencesDisplay();
+            });
+        });
+        
+        // Update the selected experiences display
+        function updateSelectedExperiencesDisplay() {
+            const selectedCount = document.getElementById('selectedCount');
+            const selectedList = document.getElementById('selectedExperiencesList');
+            
+            selectedCount.textContent = selectedExperiences.length;
+            
+            if (selectedExperiences.length === 0) {
+                selectedList.textContent = "None selected yet";
+                selectedList.style.color = "var(--text-gray)";
+            } else {
+                // Get the names of selected experiences
+                const selectedNames = [];
+                document.querySelectorAll('.experience-option.selected').forEach(option => {
+                    selectedNames.push(option.querySelector('h4').textContent);
+                });
+                
+                selectedList.textContent = selectedNames.join(", ");
+                selectedList.style.color = "var(--accent)";
+            }
+        }
+        
+        // Calculate trip cost
+        document.getElementById('calculateBtn').addEventListener('click', function() {
+            // Get values from inputs
+            const weekdays = parseInt(document.getElementById('weekdays').value) || 0;
+            const weekends = parseInt(document.getElementById('weekends').value) || 0;
+            const holidays = parseInt(document.getElementById('holidays').value) || 0;
+            const includeMeals = document.getElementById('meals').checked;
+            const guests = parseInt(document.getElementById('guests').value) || 1;
+            
+            // Calculate costs
+            const accommodationCost = (weekdays * 150) + (weekends * 185) + (holidays * 225);
+            const mealsCost = includeMeals ? (weekdays + weekends + holidays) * guests * 30 : 0;
+            const experiencesCost = selectedExperiences.length * 300;
+            
+            const totalCost = accommodationCost + mealsCost + experiencesCost;
+            const totalDays = weekdays + weekends + holidays;
+            
+            // Update display
+            document.getElementById('accommodationCost').textContent = `$${accommodationCost}`;
+            document.getElementById('mealsCost').textContent = `$${mealsCost}`;
+            document.getElementById('experiencesCost').textContent = `$${experiencesCost}`;
+            document.getElementById('totalDays').textContent = totalDays;
+            document.getElementById('totalCost').textContent = `$${totalCost}`;
+            
+            // Show results
+            document.getElementById('tripResults').style.display = 'block';
+            
+            // Scroll to results
+            document.getElementById('tripResults').scrollIntoView({behavior: 'smooth'});
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if(targetElement) {
+                    // Close mobile menu if open
+                    document.getElementById('navLinks').classList.remove('active');
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add active class to nav links based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if(scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Auto-select Popocatépetl as first option for better UX
+        document.addEventListener('DOMContentLoaded', function() {
+            // Auto-select Popocatépetl as it's the main attraction
+            const popocatepetlOption = document.querySelector('[data-experience="popocatepetl"]');
+            if (popocatepetlOption) {
+                popocatepetlOption.click();
+            }
+        });
+    </script>
+</body>
+</html>
